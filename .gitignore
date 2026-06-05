@@ -1,6 +1,9 @@
+# Deployment 
 # Logs
 logs
 *.log
+netlify-debug.md
+render-debug.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
