@@ -8,7 +8,9 @@ export default function Header() {
     return (
         <nav className="border-b px-6 py-4">
             <div className="flex items-center justify-between">
-                <div className="font-medium">Joseph Melesse</div>
+                <div className="font-medium">
+                    Joseph Melesse
+                </div>
 
                 {/* Desktop links — hidden when narrow */}
                 <ul className="hidden gap-6 sm:flex">
