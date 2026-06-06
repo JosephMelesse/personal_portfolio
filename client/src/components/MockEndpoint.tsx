@@ -11,5 +11,5 @@ export default function Body() {
       .then((data) => setMessage(data));
   }, []);
 
-  return <div className="text-3xl font-bold underline">{message}</div>;
+  return <button className="m-4 bg-blue-500 text-white px-4 py-2 rounded">{message}</button>;
 }

@@ -1,5 +1,7 @@
+//import MockEndpoint from "./components/MockEndpoint.tsx"
 import Header from "./components/Header.tsx"
-import Body from "./components/Body.tsx"
+import About from "./components/About.tsx"
+import Contact from "./components/Contact.tsx"
 import Footer from "./components/Footer.tsx"
 
 function App() {
@@ -7,7 +9,8 @@ function App() {
   return (
     <>
       <Header/>
-      <Body />
+      <About/>
+      <Contact/>
       <Footer />
     </>
   )
