@@ -3,45 +3,55 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
-function formatDateForHeader(d) {
-  const parts = new Intl.DateTimeFormat('en-US', {
-    weekday: 'short',
-    month: 'short',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true,
-    timeZoneName: 'short',
-    year: 'numeric',
-  }).formatToParts(d);
+const QUERIES = ["dog", "mountain", "coffee", "city", "ocean", "forest", "sunset", "cat"];
 
-  const map = {};
-  parts.forEach((p) => {
-    if (p.type !== 'literal') map[p.type] = p.value;
-  });
+app.get("/api/random-image", async (req, res) => {
+    try {
+        // 1. Pick a random query from the fixed list
+        const query = QUERIES[Math.floor(Math.random() * QUERIES.length)];
 
-  // Space-pad single-digit day to match the example (e.g. "Jun  6")
-  const dayNum = d.getDate();
-  const dayStr = dayNum < 10 ? ` ${dayNum}` : String(dayNum);
+        // 2. Fetch one image from Pexels for that query (random page for variety)
+        const page = Math.floor(Math.random() * 30) + 1;
+        const imageRes = await fetch(
+            `https://api.pexels.com/v1/search?query=${query}&per_page=1&page=${page}`,
+            { headers: { Authorization: process.env.PEXELS_API_KEY } }
+        );
 
-  const weekday = map.weekday || '';
-  const month = map.month || '';
-  const hour = map.hour || '';
-  const minute = map.minute || '';
-  const second = map.second || '';
-  const ampm = map.dayPeriod || '';
-  const tz = map.timeZoneName || '';
-  const year = map.year || '';
+        if (!imageRes.ok) throw new Error(`Pexels request failed: ${imageRes.status}`);
 
-  return `${weekday} ${month} ${dayStr} ${hour}:${minute}:${second} ${ampm} ${tz} ${year}`;
-}
+        const imageData = await imageRes.json();
+        const imageUrl = imageData.photos?.[0]?.src?.medium;
+        if (!imageUrl) throw new Error("No image found for query");
 
-app.get('/', (req, res) => {
-  const now = new Date();
-  res.send(formatDateForHeader(now));
+        // 3. Ask an AI to caption it, using the query as the prompt input
+        const captionRes = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+            },
+            body: JSON.stringify({
+                model: "gpt-4o-mini",
+                messages: [
+                    { role: "user", content: `Write a short, fun one-line caption for a photo of: ${query}` },
+                ],
+            }),
+        });
+
+        if (!captionRes.ok) throw new Error(`AI request failed: ${captionRes.status}`);
+
+        const captionData = await captionRes.json();
+        const caption = captionData.choices?.[0]?.message?.content?.trim() ?? "No caption generated.";
+
+        // 4. Send both back to the frontend as one JSON response
+        res.json({ imageUrl, caption, query });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Failed to fetch image or caption." });
+    }
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
