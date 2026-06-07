@@ -1,12 +1,16 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
 
+dotenv.config();
+
+const app = express();
 app.use(cors());
 app.use(express.json());
 
 const QUERIES = ["dog", "mountain", "coffee", "city", "ocean", "forest", "sunset", "cat"];
-
+console.log("Pexels key present:", !!process.env.PEXELS_API_KEY);
+console.log("OpenAI key present:", !!process.env.OPENAI_API_KEY);
 app.get("/api/random-image", async (req, res) => {
     try {
         // 1. Pick a random query from the fixed list
