@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Your deployed Render backend URL — swap in your actual one
-const API_URL = "https://your-app.onrender.com/api/random-image";
+const API_URL = "https://personal-portfolio-u22y.onrender.com";
 
 export default function Demo() {
     // 1. Track the fetched result, loading status, and any error
