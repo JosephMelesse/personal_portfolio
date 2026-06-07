@@ -1,23 +1,35 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const links = ["About", "Projects", "Contact"];
+const links = [
+    { label: "About", to: "/about" },
+    { label: "Projects", to: "/projects" },
+    { label: "Demo", to: "/demo"},
+    { label: "Contact", to: "#contact" },
+];
 
 export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="border-b px-6 py-4">
+        <nav className="fixed inset-x-0 top-0 z-50 border-b bg-white px-6 py-4">
             <div className="flex items-center justify-between">
-                <div className="font-medium">Joseph Melesse</div>
+                <Link to="/" className="font-medium">
+                    Joseph Melesse
+                </Link>
 
-                {/* Desktop links — hidden when narrow */}
                 <ul className="hidden gap-6 sm:flex">
                     {links.map((link) => (
-                        <li key={link}>{link}</li>
+                        <li key={link.to}>
+                            {link.to.startsWith("#") ? (
+                                <a href={link.to}>{link.label}</a>
+                            ) : (
+                                <Link to={link.to}>{link.label}</Link>
+                            )}
+                        </li>
                     ))}
                 </ul>
 
-                {/* Hamburger — hidden when wide */}
                 <button
                     className="sm:hidden"
                     onClick={() => setOpen(!open)}
@@ -28,12 +40,19 @@ export default function Header() {
                 </button>
             </div>
 
-            {/* Mobile dropdown — only renders when open, and only matters below sm */}
             {open && (
                 <ul className="mt-4 flex flex-col gap-4 sm:hidden">
                     {links.map((link) => (
-                        <li key={link}>
-                            <a onClick={() => setOpen(false)}>{link}</a>
+                        <li key={link.to}>
+                            {link.to.startsWith("#") ? (
+                                <a href={link.to} onClick={() => setOpen(false)}>
+                                    {link.label}
+                                </a>
+                            ) : (
+                                <Link to={link.to} onClick={() => setOpen(false)}>
+                                    {link.label}
+                                </Link>
+                            )}
                         </li>
                     ))}
                 </ul>

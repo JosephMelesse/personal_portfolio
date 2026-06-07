@@ -1,34 +1,12 @@
-import { useState, useEffect } from "react";
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-
-// commands are created inside the component so the dynamic `date` output can use component state
-
+const commands = [
+    { cmd: "whoami", output: ["Joseph Melesse"] },
+    { cmd: "cat about.txt", output: ["Developer. Tinkerer. Currently building things on the web."] },
+    { cmd: "echo $SCHOOL", output: [ "Cerritos College  ->  UC (transfer in progress)"]},
+    { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Tailwind CSS", "- Node.js"] },
+    { cmd: "echo $LOCATION", output: ["Somewhere, Earth"] },
+];
 
 export default function About() {
-
-    const [message, setMessage] = useState('Fetching date...');
-
-    useEffect(() => {
-        const fetchDate = async () => {
-            try {
-                const res = await fetch(`${API_URL}/`);
-                const data = await res.text();
-                setMessage(data);
-            } catch {
-                setMessage('Error fetching date');
-            }
-        };
-        fetchDate();
-    }, []);
-
-    const commands = [
-        { cmd: "whoami", output: ["Joseph Melesse"] },
-        { cmd: "cat about.txt", output: ["Developer. Tinkerer. Currently building things on the web."] },
-        { cmd: "echo $SCHOOL", output: [ "Cerritos College  ->  UC (transfer in progress)"]},
-        { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Tailwind CSS", "- Node.js"] },
-        { cmd: "echo $LOCATION", output: ["Somewhere, Earth"] },
-        { cmd: "date", output: [message] }
-    ];
 
     return (
         <section className="mx-auto my-12 max-w-2xl border p-4 font-mono text-sm leading-relaxed">
