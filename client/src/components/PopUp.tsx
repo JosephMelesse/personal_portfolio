@@ -23,7 +23,7 @@ export default function PopUp({ isOpen, name, description, image, link, onClose,
                 <div className="flex justify-between">
                     <h2 className="mb-4 text-2xl font-bold">{name}</h2>
                     <a href={link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                        GitHub 
+                        GitHub
                     </a>
                 </div>
                 <p className="mb-4">{description}</p>
