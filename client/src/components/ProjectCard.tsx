@@ -8,17 +8,17 @@ export default function ProjectCard({ name, description, link, image }: Project)
     return (
         <>
             <section
-                className="cursor-pointer border transition-colors hover:bg-gray-200"
+                className="m-4 cursor-pointer border transition-colors hover:bg-gray-200"
                 onClick={() => setIsOpen(true)}
             >
                 <div className="border-b">
                     {name}
                 </div>
                 <div className="flex items-start gap-4">
-                    <p className="h-28 w-64 overflow-hidden p-4 wrap-break">
+                    <p className="overflow-hidden p-4 wrap-break">
                         {description}
                     </p>
-                    <img src={image} alt={name} width={60} height={60} />
+                    <img className="self-center shrink-0" src={image} alt={name} width={80} />
                 </div>
             </section>
 

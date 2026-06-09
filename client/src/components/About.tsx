@@ -9,7 +9,7 @@ const commands = [
 export default function About() {
 
     return (
-        <section className="mx-auto my-12 max-w-2xl border p-4 font-mono text-sm leading-relaxed">
+        <section className="my-12 mx-auto max-w-2xl border p-4 font-mono text-sm leading-relaxed">
             {commands.map(({ cmd, output }, i) => (
                 <div key={i} className={i === 0 ? "" : "mt-4"}>
                     <span className="font-bold">~ $</span> {cmd}
