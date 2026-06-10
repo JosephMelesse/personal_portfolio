@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { projects } from "./Projects";
+import { projects } from "../data/projects";
 
 export default function ProjectPage() {
     const { name } = useParams();
