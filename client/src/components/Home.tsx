@@ -7,9 +7,8 @@ export default function Home() {
             <p className="mt-2 text-lg text-muted">Software developer.</p>
 
             <p className="mt-6 max-w-prose leading-relaxed">
-                I build web apps in TypeScript and React, tools in Python, and
-                {" "}the occasional piece of hardware in C++. Click to see what
-                {" "}I've made.
+                I like building things that save me or other people 
+                {" "}time. 
             </p>
 
             <Link to="/projects" className="mt-8 inline-block w-fit border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent">
