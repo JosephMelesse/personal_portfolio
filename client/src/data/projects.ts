@@ -14,18 +14,17 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        name: "edugotchi",
-        description: "A hackathon-built ESP32-S3 desk pet and educational alarm clock. To dismiss the alarm, you answer AI-generated quiz questions using a dial.",
-        overview: "Built in a weekend at IdeaHacks. A pixel-art creature lives on a small OLED screen and reacts to how you tilt and shake the device. Shake it (or trigger its alarm remotely) and it starts quizzing you, and the only way to make it stop is to answer five questions correctly.",
+        name: "mesa_ready",
+        description: "A transfer readiness checker for Cerritos College students applying to UC engineering and CS majors, built on scraped ASSIST.org articulation data.",
+        overview: "Figuring out which UC transfer requirements you've actually met means digging through ASSIST.org agreements one course at a time. Mesa Ready does it instantly: enter the courses you've taken (or plan to take), pick a target major, and see what's done and what's missing.",
         highlights: [
-            "Answer with a physical dial: turn a potentiometer to highlight an option, hold for 1.5 seconds to lock it in.",
-            "Questions are generated on the fly by a Node server calling the OpenAI API, with a built-in fallback set for when there's no connection.",
-            "The server adapts difficulty over time based on how well you're doing.",
-            "A parent dashboard shows learning streaks, overall accuracy, and per-subject performance.",
+            "Checks your courses against real articulation agreements for UCI, UCLA, UCSD, and Berkeley engineering and CS majors.",
+            "Includes a full Cal-GETC general education breakdown alongside the major requirements.",
+            "A Python scraper pulls the 2025–2026 agreements from ASSIST.org into a single SQLite database.",
         ],
-        tech: ["ESP32-S3", "Arduino C++", "Node.js", "OpenAI API"],
-        image: edugotchi_img,
-        link: "https://github.com/JosephMelesse/edugotchi"
+        tech: ["React 19", "TypeScript", "Tailwind CSS 4", "Express 5", "SQLite", "Python"],
+        image: mesa_ready_img,
+        link: "https://github.com/JosephMelesse/mesa_ready"
     },
     {
         name: "ankivert",
@@ -42,16 +41,17 @@ export const projects: Project[] = [
         link: "https://github.com/JosephMelesse/ankivert"
     },
     {
-        name: "mesa_ready",
-        description: "A transfer readiness checker for Cerritos College students applying to UC engineering and CS majors, built on scraped ASSIST.org articulation data.",
-        overview: "Figuring out which UC transfer requirements you've actually met means digging through ASSIST.org agreements one course at a time. Mesa Ready does it instantly: enter the courses you've taken (or plan to take), pick a target major, and see what's done and what's missing.",
+        name: "edugotchi",
+        description: "A hackathon-built ESP32-S3 desk pet and educational alarm clock. To dismiss the alarm, you answer AI-generated quiz questions using a dial.",
+        overview: "Built in a weekend at IdeaHacks. A pixel-art creature lives on a small OLED screen and reacts to how you tilt and shake the device. Shake it (or trigger its alarm remotely) and it starts quizzing you, and the only way to make it stop is to answer five questions correctly.",
         highlights: [
-            "Checks your courses against real articulation agreements for UCI, UCLA, UCSD, and Berkeley engineering and CS majors.",
-            "Includes a full Cal-GETC general education breakdown alongside the major requirements.",
-            "A Python scraper pulls the 2025–2026 agreements from ASSIST.org into a single SQLite database.",
+            "Answer with a physical dial: turn a potentiometer to highlight an option, hold for 1.5 seconds to lock it in.",
+            "Questions are generated on the fly by a Node server calling the OpenAI API, with a built-in fallback set for when there's no connection.",
+            "The server adapts difficulty over time based on how well you're doing.",
+            "A parent dashboard shows learning streaks, overall accuracy, and per-subject performance.",
         ],
-        tech: ["React 19", "TypeScript", "Express 5", "SQLite", "Python"],
-        image: mesa_ready_img,
-        link: "https://github.com/JosephMelesse/mesa_ready"
+        tech: ["ESP32-S3", "Arduino C++", "Node.js", "OpenAI API"],
+        image: edugotchi_img,
+        link: "https://github.com/JosephMelesse/edugotchi"
     },
 ];
