@@ -24,7 +24,7 @@ export default function About() {
 
                 <div className="mt-4">
                     <span className="font-bold text-accent">~ $</span>
-                    <span className="ml-1 inline-block w-2 animate-pulse">_</span>
+                    <span className="ml-1 inline-block w-2 animate-pulse">█</span>
                 </div>
             </div>
         </section>
