@@ -8,6 +8,11 @@ const links = [
     { label: "Contact", to: "#contact" },
 ];
 
+function scrollToContact(event: React.MouseEvent) {
+    event.preventDefault();
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+}
+
 export default function Header() {
     const [open, setOpen] = useState(false);
 
@@ -22,7 +27,7 @@ export default function Header() {
                     {links.map((link) => (
                         <li key={link.to}>
                             {link.to.startsWith("#") ? (
-                                <a href={link.to}>{link.label}</a>
+                                <a href={link.to} onClick={scrollToContact}>{link.label}</a>
                             ) : (
                                 <Link to={link.to}>{link.label}</Link>
                             )}
@@ -45,7 +50,13 @@ export default function Header() {
                     {links.map((link) => (
                         <li key={link.to}>
                             {link.to.startsWith("#") ? (
-                                <a href={link.to} onClick={() => setOpen(false)}>
+                                <a
+                                    href={link.to}
+                                    onClick={(event) => {
+                                        scrollToContact(event);
+                                        setOpen(false);
+                                    }}
+                                >
                                     {link.label}
                                 </a>
                             ) : (

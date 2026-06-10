@@ -1,16 +1,10 @@
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 import type { Project } from "./Projects";
-import PopUp from "./PopUp";
 
-export default function ProjectCard({ name, description, link, image }: Project) {
-    const [isOpen, setIsOpen] = useState(false);
-
+export default function ProjectCard({ name, description, image }: Project) {
     return (
-        <>
-            <section
-                className="m-4 cursor-pointer border transition-colors hover:bg-gray-200"
-                onClick={() => setIsOpen(true)}
-            >
+        <Link to={`/projects/${name}`} className="block">
+            <section className="m-4 cursor-pointer border transition-colors hover:bg-gray-200">
                 <div className="border-b">
                     {name}
                 </div>
@@ -21,15 +15,6 @@ export default function ProjectCard({ name, description, link, image }: Project)
                     <img className="self-center shrink-0" src={image} alt={name} width={80} />
                 </div>
             </section>
-
-            <PopUp
-                isOpen={isOpen}
-                name={name}
-                description={description}
-                image={image}
-                link={link}
-                onClose={() => setIsOpen(false)}
-            />
-        </>
+        </Link>
     );
 }

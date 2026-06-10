@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "https://personal-portfolio-u22y.onrender.com/api/random-image";
+const API_URL:string = "https://personal-portfolio-u22y.onrender.com/api/random-image";
 
 export default function Demo() {
     // 1. Track the fetched result, loading status, and any error
