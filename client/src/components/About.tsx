@@ -4,7 +4,7 @@ const commands = [
     { cmd: "whoami", output: ["Joseph Melesse"] },
     { cmd: "cat about.txt", output: ["Developer. Tinkerer. Currently building things on the web."] },
     { cmd: "echo $SCHOOL", output: [ "Cerritos College  ->  UC (transfer in progress)"]},
-    { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Node.js / Express", "- Python", "- C++ (embedded)", "- Tailwind CSS"] },
+    { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Node.js / Express", "- Python", "- C++ / Arduino", "- Tailwind CSS"] },
     { cmd: "echo $LOCATION", output: ["Somewhere, Earth"] },
 ];
 
