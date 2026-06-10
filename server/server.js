@@ -10,9 +10,6 @@ app.use(express.json());
 
 const QUERIES = ["dog", "mountain", "coffee", "city", "ocean", "forest", "sunset", "cat"];
 
-//console.log("Pexels key present:", !!process.env.PEXELS_API_KEY);
-//console.log("OpenAI key present:", !!process.env.OPENAI_API_KEY);
-
 app.get("/api/random-image", async (req, res) => {
     try {
         // 1. Pick a random query from the fixed list
