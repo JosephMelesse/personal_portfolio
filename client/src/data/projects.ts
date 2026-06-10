@@ -14,7 +14,7 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        name: "mesa_ready",
+        name: "mesa_ready <- in progress",
         description: "A transfer readiness checker for Cerritos College students applying to UC engineering and CS majors, built on scraped ASSIST.org articulation data.",
         overview: "Figuring out which UC transfer requirements you've actually met means digging through ASSIST.org agreements one course at a time. Mesa Ready does it instantly: enter the courses you've taken (or plan to take), pick a target major, and see what's done and what's missing.",
         highlights: [
