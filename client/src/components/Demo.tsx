@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const API_URL:string = "https://personal-portfolio-u22y.onrender.com/api/random-image";
+// Backend base URL: comes from .env locally and from Netlify's environment in production
+const API_BASE: string = import.meta.env.VITE_API_URL;
 
 export default function Demo() {
     // 1. Track the fetched result, loading status, and any error
@@ -13,7 +14,7 @@ export default function Demo() {
         setLoading(true);
         setError("");
         try {
-            const res = await fetch(API_URL);
+            const res = await fetch(`${API_BASE}/api/random-image`);
             if (!res.ok) throw new Error("Request failed");
             const json = await res.json();
             setData(json);
