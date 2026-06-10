@@ -9,7 +9,7 @@ export default function ProjectPage() {
         return (
             <div className="flex flex-col items-center gap-4 p-8">
                 <p>Project not found.</p>
-                <Link to="/projects" className="text-blue-600 hover:underline">
+                <Link to="/projects" className="text-link hover:underline">
                     Back to projects
                 </Link>
             </div>
@@ -20,7 +20,7 @@ export default function ProjectPage() {
         <div className="mx-auto w-full max-w-2xl p-6 sm:p-8">
             <div className="flex justify-between">
                 <h2 className="mb-4 text-2xl font-bold">{project.name}</h2>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
                     GitHub
                 </a>
             </div>
@@ -32,7 +32,7 @@ export default function ProjectPage() {
             </ul>
             <div className="mb-6 flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
-                    <span key={tech} className="rounded border px-2 py-1 text-sm">
+                    <span key={tech} className="rounded border border-edge px-2 py-1 text-sm text-muted">
                         {tech}
                     </span>
                 ))}

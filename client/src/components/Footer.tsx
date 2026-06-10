@@ -14,15 +14,15 @@ export default function Footer() {
     return (
         <div id="contact">
             <h2 className="sr-only">Contact</h2>
-            <section className="mx-auto my-12 max-w-2xl border p-4 font-mono text-sm leading-relaxed">
+            <section className="mx-auto my-12 max-w-2xl border border-edge bg-crust p-4 font-mono text-sm leading-relaxed">
                 <div>
-                    <span className="font-bold">~ $</span> cat contact.txt
+                    <span className="font-bold text-accent">~ $</span> cat contact.txt
                 </div>
                 <ul className="mt-1 space-y-1">
                     <li>
                         github: {" "}
                         <a
-                            className="text-blue-600 hover:underline"
+                            className="text-link hover:underline"
                             href="https://github.com/JosephMelesse"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function Footer() {
                     <li>
                         linkedin: {" "}
                         <a
-                            className="text-blue-600 hover:underline"
+                            className="text-link hover:underline"
                             href="https://www.linkedin.com/in/joseph-m-420333329/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -43,20 +43,20 @@ export default function Footer() {
                     </li>
                     <li>
                         email: {" "}
-                        <a className="text-blue-600 hover:underline" href={`mailto:${email}`}>
+                        <a className="text-link hover:underline" href={`mailto:${email}`}>
                             {email}
                         </a>
                         {" "}
                         <button
                             onClick={copyEmail}
-                            className="ml-2 cursor-pointer border px-1 text-xs hover:bg-gray-200"
+                            className="ml-2 cursor-pointer border border-edge px-1 text-xs transition-colors hover:bg-surface"
                         >
                             {copied ? "copied!" : "copy"}
                         </button>
                     </li>
                 </ul>
             </section>
-            <footer className="flex justify-center px-6 py-4 border-t">
+            <footer className="flex justify-center px-6 py-4 border-t border-edge text-muted">
                 © 2026 All rights reserved.
             </footer>
         </div>

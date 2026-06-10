@@ -28,12 +28,12 @@ export default function Demo() {
     return (
         <main className="mx-auto max-w-xl px-6 py-16 text-center">
             <h1 className="text-2xl font-semibold">Random Image + AI Caption</h1>
-            <p className="mt-2 text-sm">Press the button to generate an image and an AI-written caption.</p>
+            <p className="mt-2 text-sm text-muted">Press the button to generate an image and an AI-written caption.</p>
 
             <button
                 onClick={generate}
                 disabled={loading}
-                className="mt-6 border px-5 py-2 disabled:opacity-50"
+                className="mt-6 border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent disabled:opacity-50"
             >
                 {loading ? "Generating…" : "Generate"}
             </button>
@@ -42,8 +42,8 @@ export default function Demo() {
 
             {data && !loading && (
                 <figure className="mt-8">
-                    <img src={data.imageUrl} alt={data.caption} className="mx-auto border" />
-                    <figcaption className="mt-3 text-sm italic">{data.caption}</figcaption>
+                    <img src={data.imageUrl} alt={data.caption} className="mx-auto border border-edge" />
+                    <figcaption className="mt-3 text-sm italic text-muted">{data.caption}</figcaption>
                 </figure>
             )}
         </main>

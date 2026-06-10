@@ -9,10 +9,10 @@ const commands = [
 export default function About() {
 
     return (
-        <section className="my-12 mx-auto max-w-2xl border p-4 font-mono text-sm leading-relaxed">
+        <section className="my-12 mx-auto max-w-2xl border border-edge bg-crust p-4 font-mono text-sm leading-relaxed">
             {commands.map(({ cmd, output }, i) => (
                 <div key={i} className={i === 0 ? "" : "mt-4"}>
-                    <span className="font-bold">~ $</span> {cmd}
+                    <span className="font-bold text-accent">~ $</span> {cmd}
                     {output.map((line, j) => (
                         <p key={j}>{line}</p>
                     ))}
@@ -20,7 +20,7 @@ export default function About() {
             ))}
 
             <div className="mt-4">
-                <span className="font-bold">~ $</span>
+                <span className="font-bold text-accent">~ $</span>
                 <span className="ml-1 inline-block w-2 animate-pulse">_</span>
             </div>
         </section>

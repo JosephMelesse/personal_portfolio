@@ -17,9 +17,9 @@ export default function Header() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed inset-x-0 top-0 z-50 border-b bg-white px-6 py-4">
+        <nav className="fixed inset-x-0 top-0 z-50 border-b border-edge bg-crust px-6 py-4">
             <div className="flex items-center justify-between">
-                <Link to="/" className="font-medium">
+                <Link to="/" className="font-medium text-accent">
                     Joseph Melesse
                 </Link>
 
