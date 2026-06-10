@@ -27,7 +27,7 @@ export default function Demo() {
 
     // 3. Render the button, then conditionally the loading / error / result
     return (
-        <main className="mx-auto max-w-xl px-6 py-16 text-center">
+        <section className="mx-auto max-w-xl px-6 py-16 text-center">
             <h1 className="text-2xl font-semibold">Random Image + AI Caption</h1>
             <p className="mt-2 text-sm text-muted">Press the button to generate an image and an AI-written caption.</p>
 
@@ -47,6 +47,6 @@ export default function Demo() {
                     <figcaption className="mt-3 text-sm italic text-muted">{data.caption}</figcaption>
                 </figure>
             )}
-        </main>
+        </section>
     );
 }
