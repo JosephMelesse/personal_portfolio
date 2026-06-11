@@ -5,7 +5,13 @@ import cors from "cors";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// Only the deployed frontend and local dev may call this API
+const ALLOWED_ORIGINS = [
+    "https://josephmelesse.netlify.app",
+    "http://localhost:5173",
+];
+app.use(cors({ origin: ALLOWED_ORIGINS }));
 app.use(express.json());
 
 const QUERIES = ["dog", "mountain", "coffee", "city", "ocean", "forest", "sunset", "cat"];
