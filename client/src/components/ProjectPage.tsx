@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/projects";
+import Home from "./Home.tsx";
 
 export default function ProjectPage() {
     const { name } = useParams();
@@ -38,6 +38,9 @@ export default function ProjectPage() {
                 ))}
             </div>
             <img src={project.image} alt={project.name} className="w-full object-contain" />
+            <Link to="/projects" className="mt-8 inline-block w-fit border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent">
+                Back to Projects
+            </Link>
         </div>
     );
 }
