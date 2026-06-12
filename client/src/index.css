@@ -2,14 +2,14 @@
 
 /* Gruvbox dark palette, mapped to semantic design tokens */
 @theme {
-    --color-canvas: #282828;  /* bg0: page background */
-    --color-crust: #1d2021;   /* bg0_h: terminal blocks, header */
-    --color-surface: #3c3836; /* bg1: hover states */
-    --color-edge: #504945;    /* bg2: borders */
-    --color-ink: #ebdbb2;     /* fg1: primary text */
-    --color-muted: #a89984;   /* fg4: secondary text */
-    --color-accent: #fabd2f;  /* yellow: prompts, highlights */
-    --color-link: #83a598;    /* blue: links */
+    --color-canvas: #282828;  /* page background */
+    --color-crust: #1d2021;   /* terminal blocks, header */
+    --color-surface: #3c3836; /* hover states */
+    --color-edge: #504945;    /* borders */
+    --color-ink: #ebdbb2;     /* primary text */
+    --color-muted: #a89984;   /* secondary text */
+    --color-accent: #fabd2f;  /* prompts, highlights */
+    --color-link: #83a598;    /* links */
 }
 
 @layer base {

@@ -6,6 +6,7 @@ import About from "./components/About.tsx";
 import Projects from "./components/Projects.tsx";
 import ProjectPage from "./components/ProjectPage.tsx";
 import Footer from "./components/Footer.tsx";
+import NotFound from "./components/NotFound.tsx";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/projects/:name" element={<ProjectPage />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </main>
