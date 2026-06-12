@@ -9,8 +9,8 @@ export default function ProjectPage() {
         return (
             <div className="flex flex-col items-center gap-4 p-8">
                 <p>Project not found.</p>
-                <Link to="/projects" className="text-link hover:underline">
-                    Back to projects
+                <Link to="/projects" className="mt-8 inline-block w-fit border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent">
+                    ← Back to projects
                 </Link>
             </div>
         );
@@ -39,7 +39,7 @@ export default function ProjectPage() {
             </div>
             <img src={project.image} alt={project.name} className="w-full object-contain" />
             <Link to="/projects" className="mt-8 inline-block w-fit border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent">
-                Back to projects
+                ← Back to projects
             </Link>
         </div>
     );
