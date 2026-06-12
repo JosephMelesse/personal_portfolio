@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import Home from "./Home.tsx";
 
 export default function ProjectPage() {
     const { name } = useParams();
