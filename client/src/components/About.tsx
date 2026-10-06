@@ -3,7 +3,7 @@ import TerminalTitleBar from "./TerminalTitleBar";
 const commands = [
     { cmd: "whoami", output: ["Joseph Melesse"] },
     { cmd: "echo $SCHOOL", output: [ "Cerritos College  ->  UC (transfer in progress)"]},
-    { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Node.js / Express", "- Python", "- C++ / Arduino", "- Tailwind CSS"] },
+    { cmd: "cat skills.md", output: ["# Skills", "- TypeScript / React", "- Node.js / Express / tRPC", "- Python / FastAPI", "- Electron", "- PostgreSQL / MongoDB / SQLite", "- C / C++ / Arduino", "- Tailwind CSS"] },
     { cmd: "echo $LOCATION", output: ["Los Angeles, California"] },
 ];
 
