@@ -20,9 +20,11 @@ export default function ProjectPage() {
         <div className="mx-auto w-full max-w-2xl p-6 sm:p-8">
             <div className="flex justify-between">
                 <h2 className="mb-4 text-2xl font-bold">{project.name}</h2>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
-                    GitHub
-                </a>
+                {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-link hover:underline">
+                        GitHub
+                    </a>
+                )}
             </div>
             <p className="mb-6">{project.overview}</p>
             <ul className="mb-6 list-disc space-y-2 pl-5">
@@ -37,7 +39,9 @@ export default function ProjectPage() {
                     </span>
                 ))}
             </div>
-            <img src={project.image} alt={project.name} className="w-full object-contain" />
+            {project.image && (
+                <img src={project.image} alt={project.name} className="mx-auto h-auto max-h-96 w-auto max-w-full object-contain" />
+            )}
             <Link to="/projects" className="mt-8 inline-block w-fit border border-edge px-5 py-2 transition-colors hover:border-accent hover:text-accent">
                 ← Back to projects
             </Link>

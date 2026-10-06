@@ -12,12 +12,14 @@ export default function ProjectCard({ name, description, image }: Project) {
                 />
                 <div className="flex items-start gap-4 p-4">
                     <p className="leading-relaxed">{description}</p>
-                    <img
-                        className="shrink-0 self-center border border-edge"
-                        src={image}
-                        alt={name}
-                        width={80}
-                    />
+                    {image && (
+                        <img
+                            className="shrink-0 self-center border border-edge"
+                            src={image}
+                            alt={name}
+                            width={80}
+                        />
+                    )}
                 </div>
             </section>
         </Link>
