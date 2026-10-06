@@ -28,6 +28,7 @@ export const projects: Project[] = [
         ],
         tech: ["Electron", "React 19", "TypeScript", "Python", "FastAPI", "SQLite", "SymPy", "Claude API"],
         image: kedami_img,
+        link: "https://github.com/JosephMelesse/kedami"
     },
     {
         name: "course-eater",
