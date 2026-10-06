@@ -37,3 +37,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# tmux/tmuxp workflow file (local, not committed)
+.tmuxp.yaml
